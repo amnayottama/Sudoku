@@ -3,7 +3,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/javascript" src="SudokuGenerator.js"></script>
 	</head>
-	<body onload="papan()">
+	<body onload="generateGivensOnLoad()">
 	<div class="container">
 		<table>
 			<caption> <font size="6">Sudoku Puzzle </font></caption>
@@ -107,20 +107,18 @@
 				<td id="88"></td>
 			</tr>
 		</table>
-		<div>
-		<p id="test">index</p>
-		</div>
-
 		<div class="buttonsContainer">
-            <td> <button class="button generateButton" onclick="acak()">Generate</button> </td>
-            <td> <button class="button solveButton" onclick="test()">Solve</button> </td>
-	    </div>
-
-        <div class="buttonsHide">
-            <button class="button hideButton1" onclick="mudah()" hidden>Easy</button>
-            <button class="button hideButton2" onclick="sedang()" hidden>Medium</button> 
-            <button class="button hideButton3" onclick="susah()" hidden>Hard</button> 
+			<td> <button class="button generateButton" onclick="generate()">Generate Puzzle</button> </td>
+			<td> <button class="button solveButton" onclick="solveSudokuPuzzle()">Solve</button> </td>
+			<td> <button class="button solveButtonWithImidiateDrawing" onclick="DrawSolutionNow()" hidden>Show me the solution now!</button> </td>
+		</div>
+		<div class="buttonsHide">
+            <button class="button hideButton1" onclick="easy()" hidden>Easy</button>
+            <button class="button hideButton2" onclick="medium()" hidden>Medium</button> 
+            <button class="button hideButton3" onclick="impossible()" hidden>impossible</button> 
         </div>
-
+		<div id="messages">
+		</div>
+	</div>
 	</body>
 </html>

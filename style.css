@@ -16,8 +16,6 @@ td {
 	overflow: hidden;
 }
 
-
-
 td:first-child {
 	border-left: solid;
 	border-left-color: black;
@@ -44,12 +42,6 @@ tr:nth-child(3n) {
 	height: 60px;
 }
 
-.buttonsHide {
-	margin-top: 10px;
-	width: 400px;
-	height: 100px;
-}
-
 #messages {
 	margin-top: 5px;
 	width: 380px;
@@ -74,6 +66,25 @@ tr:nth-child(3n) {
 	border-radius: 10px;
 }
 
+.solveButton {
+	float: right;
+	width: 170px;
+	font-size: 17px;
+	cursor: pointer;
+	height: 52px;
+	line-height: 50px;
+	border-radius: 10px;
+}
+
+.solveButtonWithImidiateDrawing {
+	margin-top: 5px;
+	width: 380px;
+	font-size: 17px;
+	cursor: pointer;
+	height: 52px;
+	line-height: 50px;
+	border-radius: 10px;
+}
 .hideButton1 {
 	float: left;
 	width: 100px;
@@ -101,24 +112,3 @@ tr:nth-child(3n) {
 	line-height: 50px;
 	border-radius: 10px;
 }
-
-.solveButton {
-	float: right;
-	width: 170px;
-	font-size: 17px;
-	cursor: pointer;
-	height: 52px;
-	line-height: 50px;
-	border-radius: 10px;
-}
-
-.solveButtonWithImidiateDrawing {
-	margin-top: 5px;
-	width: 380px;
-	font-size: 17px;
-	cursor: pointer;
-	height: 52px;
-	line-height: 50px;
-	border-radius: 10px;
-}
-

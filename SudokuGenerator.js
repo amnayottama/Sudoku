@@ -5,7 +5,7 @@ var hard = 20;
 
 //papan9x9
 function papan() {
-	sudokupapan = [	[5,0,0,0,0,0,0,0,0],
+	sudokupapan = [	[5,2,0,0,0,0,0,0,0],
 					[0,0,0,0,0,0,0,0,0],
 					[0,0,0,0,0,0,0,0,0],
 					[0,0,0,0,0,0,0,0,0],
@@ -18,8 +18,8 @@ function papan() {
 	warnaangka();
 }
 
-//warna pada angka soal merah
-//warna pada angka jawaban biru
+//Memasukan array ke dalam tampilan menggunakan index id
+//memberi warna pada angka soal merah dan jawaban biru
 function warnaangka() {
 	var i, j, indexId;
 	for (i = 0; i < 9; i++) {
@@ -61,7 +61,7 @@ function susah(){
     enableGenerateButton();
 }
 
-//generator acak dan menghapus
+//generator acak dan menghapus 
 function generatesudoku(difficult){
 	var i, j, ibaris, ikolom;
    
@@ -101,7 +101,7 @@ function generatesudoku(difficult){
             if (sudokupapan[baris][ikolom] == angka) return false;
         }
         
-        // check sub-grid (3x3) conflict
+        // pengecheckan sub-grid (3x3) 
         subbaris = ibaris - ibaris % 3;
         subkolom = ikolom - ikolom % 3;
          for (baris = 0; baris < 3; baris++)
@@ -122,6 +122,73 @@ function hapuspapan() {
 		for (j = 0; j < 9; j++) {
 			indexId = i + "" + j; 
 			document.getElementById(indexId).innerHTML = "";
+		}
+	}
+}
+function test(){
+    var  a;
+    for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			indexId = i + "" + j; 
+			var lolz = document.getElementById(indexId).innerHTML;
+            if (lolz !== 0)
+            return test;
+            do {
+                for (a = 1; a < 10; a++)
+                document.getElementById(indexId).innerHTML = a;
+            }while (lolz == 0)
+            
+    
+
+		}
+	}
+
+}
+
+function jalan(){
+    drawGrid = [];
+    if (solve()) {
+		finish();
+	}
+}
+
+function solve() {
+    
+    var posisiangkakosong, posisiangka, angkabaru, baris, kolom;
+	
+	posisiangkakosong = kotakkosong();
+	if (posisiangkakosong == "") return true;
+	
+	baris = posisiangkakosong.charAt(0);
+	kolom = posisiangkakosong.charAt(1);
+	posisiangka = posisiangkakosong;
+    
+	
+	for (angkabaru = 1; angkabaru <= 9; angkabaru++) {
+		if (syarat(baris,kolom,angkabaru)) {
+            sudokupapan.push(angkabaru);
+			sudokupapan[baris][kolom] = angkabaru;
+        }		
+    }
+}
+
+function kotakkosong() {
+	var i, j, position = "";
+	for (i = 0; i < 9; i++)
+		for (j = 0; j < 9; j++)
+			if (sudokupapan[i][j] == 0) {
+				position = i + "" + j;
+				return position;
+			}
+	return position;
+}
+
+function finish() {
+	var i, j, indexId;
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			indexId = i + "" + j;
+			document.getElementById(indexId).innerHTML = sudokupapan[i][j];
 		}
 	}
 }

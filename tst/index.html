@@ -1,0 +1,308 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="sudokuSolver.js"></script>
+	</head>
+	<body onload="generateGivensOnLoad()">
+	<div class="container">
+		<table>
+			<caption> <font size="6">Sudoku Puzzle </font></caption>
+			<tr id="0">
+				<td id="00"></td>
+				<td id="01"></td>
+				<td id="02"></td>
+				<td id="03"></td>
+				<td id="04"></td>
+				<td id="05"></td>
+				<td id="06"></td>
+				<td id="07"></td>
+				<td id="08"></td>
+				<td id="09"></td>
+				<td id="010"></td>
+				<td id="011"></td>
+				<td id="012"></td>
+				<td id="013"></td>
+				<td id="014"></td>
+				<td id="015"></td>
+			</tr>
+			<tr id="1">
+				<td id="10"></td>
+				<td id="11"></td>
+				<td id="12"></td>
+				<td id="13"></td>
+				<td id="14"></td>
+				<td id="15"></td>
+				<td id="16"></td>
+				<td id="17"></td>
+				<td id="18"></td>
+				<td id="19"></td>
+				<td id="110"></td>
+				<td id="111"></td>
+				<td id="112"></td>
+				<td id="113"></td>
+				<td id="114"></td>
+				<td id="115"></td>
+			</tr>
+			<tr id="2">
+				<td id="20"></td>
+				<td id="21"></td>
+				<td id="22"></td>
+				<td id="23"></td>
+				<td id="24"></td>
+				<td id="25"></td>
+				<td id="26"></td>
+				<td id="27"></td>
+				<td id="28"></td>
+				<td id="29"></td>
+				<td id="210"></td>
+				<td id="211"></td>
+				<td id="212"></td>
+				<td id="213"></td>
+				<td id="214"></td>
+				<td id="215"></td>
+			</tr>
+			<tr id="3">
+				<td id="30"></td>
+				<td id="31"></td>
+				<td id="32"></td>
+				<td id="33"></td>
+				<td id="34"></td>
+				<td id="35"></td>
+				<td id="36"></td>
+				<td id="37"></td>
+				<td id="38"></td>
+				<td id="39"></td>
+				<td id="310"></td>
+				<td id="311"></td>
+				<td id="312"></td>
+				<td id="313"></td>
+				<td id="314"></td>
+				<td id="315"></td>
+			</tr>
+			<tr id="4">
+				<td id="40"></td>
+				<td id="41"></td>
+				<td id="42"></td>
+				<td id="43"></td>
+				<td id="44"></td>
+				<td id="45"></td>
+				<td id="46"></td>
+				<td id="47"></td>
+				<td id="48"></td>
+				<td id="49"></td>
+				<td id="410"></td>
+				<td id="411"></td>
+				<td id="412"></td>
+				<td id="413"></td>
+				<td id="414"></td>
+				<td id="415"></td>
+			</tr>
+			<tr id="5">
+				<td id="50"></td>
+				<td id="51"></td>
+				<td id="52"></td>
+				<td id="53"></td>
+				<td id="54"></td>
+				<td id="55"></td>
+				<td id="56"></td>
+				<td id="57"></td>
+				<td id="58"></td>
+				<td id="59"></td>
+				<td id="510"></td>
+				<td id="511"></td>
+				<td id="512"></td>
+				<td id="513"></td>
+				<td id="514"></td>
+				<td id="515"></td>
+			</tr>
+			<tr id="6">
+				<td id="60"></td>
+				<td id="61"></td>
+				<td id="62"></td>
+				<td id="63"></td>
+				<td id="64"></td>
+				<td id="65"></td>
+				<td id="66"></td>
+				<td id="67"></td>
+				<td id="68"></td>
+				<td id="69"></td>
+				<td id="610"></td>
+				<td id="611"></td>
+				<td id="612"></td>
+				<td id="613"></td>
+				<td id="614"></td>
+				<td id="615"></td>
+			</tr>
+			<tr id="7">
+				<td id="70"></td>
+				<td id="71"></td>
+				<td id="72"></td> 
+				<td id="73"></td>
+				<td id="74"></td>
+				<td id="75"></td>
+				<td id="76"></td>
+				<td id="77"></td>
+				<td id="78"></td>
+				<td id="79"></td> 
+				<td id="710"></td>
+				<td id="711"></td>
+				<td id="712"></td>
+				<td id="713"></td>
+				<td id="714"></td>
+				<td id="715"></td>
+			</tr>
+			<tr id="8">
+				<td id="80"></td>
+				<td id="81"></td>
+				<td id="82"></td>
+				<td id="83"></td>
+				<td id="84"></td>
+				<td id="85"></td>
+				<td id="86"></td>
+				<td id="87"></td>
+				<td id="88"></td>
+				<td id="89"></td>
+				<td id="810"></td>
+				<td id="811"></td>
+				<td id="812"></td>
+				<td id="813"></td>
+				<td id="814"></td>
+				<td id="815"></td>
+			</tr>
+			<tr id="9">
+				<td id="90"></td>
+				<td id="91"></td>
+				<td id="92"></td>
+				<td id="93"></td>
+				<td id="94"></td>
+				<td id="95"></td>
+				<td id="96"></td>
+				<td id="97"></td>
+				<td id="98"></td>
+				<td id="99"></td>
+				<td id="910"></td>
+				<td id="911"></td>
+				<td id="912"></td>
+				<td id="913"></td>
+				<td id="914"></td>
+				<td id="915"></td>
+			</tr>
+			<tr id="10">
+				<td id="100"></td>
+				<td id="101"></td>
+				<td id="102"></td>
+				<td id="103"></td>
+				<td id="104"></td>
+				<td id="105"></td>
+				<td id="106"></td>
+				<td id="107"></td>
+				<td id="108"></td>
+				<td id="109"></td>
+				<td id="1010"></td>
+				<td id="1011"></td>
+				<td id="1012"></td>
+				<td id="1013"></td>
+				<td id="1014"></td>
+				<td id="1015"></td>
+			</tr>
+			<tr id="11">
+				<td id="110"></td>
+				<td id="111"></td>
+				<td id="112"></td>
+				<td id="113"></td>
+				<td id="114"></td>
+				<td id="115"></td>
+				<td id="116"></td>
+				<td id="117"></td>
+				<td id="118"></td>
+				<td id="119"></td>
+				<td id="1110"></td>
+				<td id="1111"></td>
+				<td id="1112"></td>
+				<td id="1113"></td>
+				<td id="1114"></td>
+				<td id="1115"></td>
+			</tr>
+			<tr id="12">
+				<td id="120"></td>
+				<td id="121"></td>
+				<td id="122"></td>
+				<td id="123"></td>
+				<td id="124"></td>
+				<td id="125"></td>
+				<td id="126"></td>
+				<td id="127"></td>
+				<td id="128"></td>
+				<td id="129"></td>
+				<td id="1210"></td>
+				<td id="1211"></td>
+				<td id="1212"></td>
+				<td id="1213"></td>
+				<td id="1214"></td>
+				<td id="1215"></td>
+			</tr>
+			<tr id="13">
+				<td id="130"></td>
+				<td id="131"></td>
+				<td id="132"></td>
+				<td id="133"></td>
+				<td id="134"></td>
+				<td id="135"></td>
+				<td id="136"></td>
+				<td id="137"></td>
+				<td id="138"></td>
+				<td id="139"></td>
+				<td id="1310"></td>
+				<td id="1311"></td>
+				<td id="1312"></td>
+				<td id="1313"></td>
+				<td id="1314"></td>
+				<td id="1315"></td>
+			</tr>
+			<tr id="14">
+				<td id="140"></td>
+				<td id="141"></td>
+				<td id="142"></td>
+				<td id="143"></td>
+				<td id="144"></td>
+				<td id="145"></td>
+				<td id="146"></td>
+				<td id="147"></td>
+				<td id="148"></td>
+				<td id="149"></td>
+				<td id="1410"></td>
+				<td id="1411"></td>
+				<td id="1412"></td>
+				<td id="1413"></td>
+				<td id="1414"></td>
+				<td id="1415"></td>
+			</tr>
+			<tr id="15">
+				<td id="150"></td>
+				<td id="151"></td>
+				<td id="152"></td>
+				<td id="153"></td>
+				<td id="154"></td>
+				<td id="155"></td>
+				<td id="156"></td>
+				<td id="157"></td>
+				<td id="158"></td>
+				<td id="159"></td>
+				<td id="1510"></td>
+				<td id="1511"></td>
+				<td id="1512"></td>
+				<td id="1513"></td>
+				<td id="1514"></td>
+				<td id="1515"></td>
+			</tr>
+		</table>
+		<div class="buttonsContainer">
+			<td> <button class="button generateButton" onclick="generateGivens()">Generate Puzzle</button> </td>
+			<td> <button class="button solveButton" onclick="solveSudokuPuzzle()">Solve</button> </td>
+			<td> <button class="button solveButtonWithImidiateDrawing" onclick="DrawSolutionNow()" hidden>Show me the solution now!</button> </td>
+		</div>
+		<div id="messages">
+		</div>
+	</div>
+	</body>
+</html>

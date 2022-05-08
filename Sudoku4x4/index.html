@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="sudokuSolver.js"></script>
+	</head>
+	<body onload="generateGivensOnLoad()">
+	<div class="container">
+		<table>
+			<caption> <font size="6">Sudoku Puzzle </font></caption>
+			<tr id="0">
+				<td id="00"></td>
+				<td id="01"></td>
+				<td id="02"></td>
+				<td id="03"></td>
+			</tr>
+			<tr id="1">
+				<td id="10"></td>
+				<td id="11"></td>
+				<td id="12"></td>
+				<td id="13"></td>
+			</tr>
+			<tr id="2">
+				<td id="20"></td>
+				<td id="21"></td>
+				<td id="22"></td>
+				<td id="23"></td>
+			</tr>
+			<tr id="3">
+				<td id="30"></td>
+				<td id="31"></td>
+				<td id="32"></td>
+				<td id="33"></td>
+			</tr>
+		</table>
+		<div class="buttonsContainer">
+			<td> <button class="button generateButton" onclick="generateGivens()">Generate Puzzle</button> </td>
+			<td> <button class="button solveButton" onclick="solveSudokuPuzzle()">Solve</button> </td>
+			<td> <button class="button solveButtonWithImidiateDrawing" onclick="DrawSolutionNow()" hidden>Show me the solution now!</button> </td>
+		</div>
+		<div id="messages">
+		</div>
+	</div>
+	</body>
+</html>

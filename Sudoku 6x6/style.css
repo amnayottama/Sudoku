@@ -20,7 +20,7 @@ td:first-child {
 	border-left: solid;
 	border-left-color: black;
 }
-td:nth-child(2n) {
+td:nth-child(3n) {
 	border-right: solid;
 	border-right-color: black;
 }

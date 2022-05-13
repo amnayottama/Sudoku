@@ -92,9 +92,9 @@ function createsNoConflicts(indexX,indexY,candidate) {
 	
 	// check sub-grid (3x3) conflict
 	subGridLeftUpperRow = indexX - indexX % 2;
-	subGridLeftUpperColumn = indexY - indexY % 2;
+	subGridLeftUpperColumn = indexY - indexY % 3;
 	 for (row = 0; row < 2; row++)
-        for (column = 0; column < 2; column++)
+        for (column = 0; column < 3; column++)
 			if (sudokuGrid[subGridLeftUpperRow + row][subGridLeftUpperColumn + column] == candidate) return false;
 	
 	return true;

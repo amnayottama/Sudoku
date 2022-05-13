@@ -1,28 +1,24 @@
-var sudokupapan;
 var sudokuGrid;
-var ieasy = 24;
-var imedium = 15;
-var iimpossible = 5;
+var numberOfGivens = 20;
 var drawGrid, drawElement, drawSolutionNow, takesTooLongToExecute;
 
 function generateGivensOnLoad() {
 	// initialize the sudoku Grid
-	sudokuGrid = [	[0,0,0,0,0,0,0,0,0],
-					[0,0,0,0,0,0,0,0,0],
-					[0,0,0,0,0,0,0,0,0],
-					[0,0,0,0,0,0,0,0,0],
-					[0,0,0,0,0,0,0,0,0],
-					[0,0,0,0,0,0,0,0,0],
-					[0,0,0,0,0,0,0,0,0],
-					[0,0,0,0,0,0,0,0,0],
-					[0,0,0,0,0,0,0,0,0]	];
+	sudokuGrid = [	[5,3,0,0,7,0,0,0,0],
+					[6,0,0,1,9,5,0,0,0],
+					[0,9,8,0,0,0,0,6,0],
+					[8,0,0,0,6,0,0,0,3],
+					[4,0,0,8,0,3,0,0,1],
+					[7,0,0,0,2,0,0,0,6],
+					[0,6,0,0,0,0,2,8,0],
+					[0,0,0,4,1,9,0,0,5],
+					[0,0,0,0,8,0,0,7,9]	];
 	
 	drawGridWithGivens();
 }
 
-function generateGivens(difficult) {
+function generateGivens() {
 	var i, j, candidate, indexX, indexY, position;
-	numberOfGivens = difficult
 	
 	disableButtons();
 	emptyMessages();
@@ -62,40 +58,6 @@ function drawGridWithGivens() {
 			}
 		}
 	}
-}
-
-//tampilan
-function generate(){
-    disableButtons();
-    hidenButton1(1);
-    hidenButton2(1);
-    hidenButton3(1);
-}
-
-//pemilihan difficult
-function easy(){
-    var difficult = ieasy;
-    generateGivens(difficult);
-    hidenButton1(0);
-    hidenButton2(0);
-    hidenButton3(0);
-    enableGenerateButton();
-}
-function medium(){
-    var difficult = imedium;
-    generateGivens(difficult);
-    hidenButton1(0);
-    hidenButton2(0);
-    hidenButton3(0);
-    enableGenerateButton();
-}
-function impossible(){
-    var difficult = iimpossible;
-    generateGivens(difficult);
-    hidenButton1(0);
-    hidenButton2(0);
-    hidenButton3(0);
-    enableGenerateButton();
 }
 
 function drawFullGridSolution() {
@@ -191,7 +153,7 @@ function solveUsingBacktrack() {
 			// stop execution if drawGrid gets too large
 			// This means that it takes too much time to find 
 			// an actual solution using this backtrack algorithm
-			if (drawGrid.length > 1000000) {
+			if (drawGrid.length > 3000000) {
 				takesTooLongToExecute = 1;
 				return false;
 			}
@@ -292,17 +254,4 @@ function drawCandidate(row, column) {
 
 function removeCandidateFromGrid(position) {
 	document.getElementById(position).innerHTML = "";
-}
-
-function hidenButton1(show) {
-	if (show) document.getElementsByClassName("hideButton1")[0].hidden = false;
-	else document.getElementsByClassName("hideButton1")[0].hidden = true;
-}
-function hidenButton2(show) {
-	if (show) document.getElementsByClassName("hideButton2")[0].hidden = false;
-	else document.getElementsByClassName("hideButton2")[0].hidden = true;
-}
-function hidenButton3(show) {
-	if (show) document.getElementsByClassName("hideButton3")[0].hidden = false;
-	else document.getElementsByClassName("hideButton3")[0].hidden = true;
 }
